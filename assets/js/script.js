@@ -12,6 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+    document.getElementById("answer-box").addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            checkAnswer();
+        }
+    });
     runGame("addition");
 });
 
@@ -19,7 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
  * The main run function to start the game
  */
 function runGame(gameType) {
-
+    document.getElementById("answer-box").value = "";
+    document.getElementById("answer-box").focus();
     // Creates the numbers between 1 and 25
     let num1 = Math.floor(Math.random() * 25) + 1;
     let num2 = Math.floor(Math.random() * 25) + 1;
